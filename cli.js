@@ -402,11 +402,14 @@ var Terminal = {
 	print: function(text) {
 		if (!text) {
 			$('#display').append($('<div>'));
+			console.log();
 		} else if( text instanceof jQuery ) {
 			$('#display').append(text);
+			console.log(text.text());
 		} else {
 			var av = Array.prototype.slice.call(arguments, 0);
 			$('#display').append($('<p>').text(av.join(' ')));
+			console.log(av.join(' '));
 		}
 		this.jumpToBottom();
 	},

@@ -18,7 +18,7 @@ var xkcd = {
 	latest: null,
 	last: null,
 	cache: {},
-	base: 'proxy.php?mode=native&url=http://xkcd.com/',
+	base: 'http://xkcd.com/',
 	
 	get: function(num, success, error) {
 		if (num == null) {
@@ -576,7 +576,7 @@ TerminalShell.fallback = function(terminal, cmd) {
 		} else if (/:\(\)\s*{\s*:\s*\|\s*:\s*&\s*}\s*;\s*:/.test(cmd)) {
 			Terminal.setWorking(true);
 		} else {
-			$.get("/unixkcd/missing", {cmd: cmd});
+			// $.get("http://xkcd.com/unixkcd/missing", {cmd: cmd});
 			return false;
 		}
 	}
